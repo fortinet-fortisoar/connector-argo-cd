@@ -1,0 +1,894 @@
+{
+  "name": "argo-cd",
+  "version": "1.0.0",
+  "label": "Argo CD",
+  "description": "Argo CD (short for Argo Continuous Delivery) is a declarative, GitOps continuous delivery tool for Kubernetes. It allows you to manage and deploy applications to Kubernetes clusters using Git repositories as the source of truth for both the desired application state and its configuration.",
+  "publisher": "Fortinet",
+  "cs_approved": true,
+  "cs_compatible": true,
+  "contributor": "",
+  "help_online": "",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "category": "DevOps and Digital Operations",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "description": "Specify the URL of the Argo CD server to connect and perform automated operations.",
+        "type": "text",
+        "name": "server_url",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "tooltip": "Specify the URL of the Argo CD server to connect and perform automated operations."
+      },
+      {
+        "title": "API Token",
+        "description": "Specify the API Token to access the endpoint to connect and perform the automated operations",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "password",
+        "name": "api_token",
+        "tooltip": "Specify the API Token to access the endpoint to connect and perform the automated operations"
+      },
+      {
+        "title": "Verify SSL",
+        "description": "Specifies whether the SSL certificate for the server is to be verified. By default, this option is set to True.",
+        "name": "verify_ssl",
+        "type": "checkbox",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "value": true,
+        "tooltip": "Specifies whether the SSL certificate for the server is to be verified. By default, this option is set to True."
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "create_application",
+      "title": "Create Application",
+      "description": "Creates a application in Argo CD based on the application name, source, destination, and other input parameters that you have specified.",
+      "category": "investigation",
+      "annotation": "create_application",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Application Name",
+          "description": "Specify the name of the application to create application in Argo CD.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "name",
+          "tooltip": "Specify the name of the application to create application in Argo CD."
+        },
+        {
+          "title": "Source",
+          "description": "Specify the source, in the JSON format, based on which you want to create application in Argo CD.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "source",
+          "tooltip": "Specify the source, in the JSON format, based on which you want to create application in Argo CD.",
+          "value": {
+            "repoURL": "",
+            "path": "",
+            "helm": {
+              "valueFiles": []
+            }
+          }
+        },
+        {
+          "title": "Destination",
+          "description": "Specify the destination, in the JSON format, based on which you want to create application in Argo CD.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "destination",
+          "tooltip": "Specify the destination, in the JSON format, based on which you want to create application in Argo CD.",
+          "value": {
+            "server": "",
+            "namespace": ""
+          }
+        },
+        {
+          "title": "Metadata",
+          "description": "Specify the metadata, in the JSON format, based on which you want to create application in Argo CD.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "metadata",
+          "tooltip": "Specify the metadata, in the JSON format, based on which you want to create application in Argo CD."
+        },
+        {
+          "title": "Specifications",
+          "description": "Specify the specifications, in the JSON format, based on which you want to create application in Argo CD.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "spec",
+          "tooltip": "Specify the specifications, in the JSON format, based on which you want to create application in Argo CD."
+        },
+        {
+          "title": "Operation",
+          "description": "Specify the operation, in the JSON format, based on which you want to create application in Argo CD.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "operation",
+          "tooltip": "Specify the operation, in the JSON format, based on which you want to create application in Argo CD."
+        },
+        {
+          "title": "Additional Properties",
+          "description": "Additional fields, in the JSON format, based on which you want to create application in Argo CD.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "additional_properties",
+          "tooltip": "Additional fields, in the JSON format, based on which you want to create application in Argo CD."
+        }
+      ],
+      "output_schema": {
+        "metadata": {
+          "name": "",
+          "namespace": "",
+          "uid": "",
+          "resourceVersion": "",
+          "generation": "",
+          "creationTimestamp": "",
+          "managedFields": [
+            {
+              "manager": "",
+              "operation": "",
+              "apiVersion": "",
+              "time": "",
+              "fieldsType": "",
+              "fieldsV1": {
+                "f:spec": {
+                  ".": {},
+                  "f:destination": {
+                    ".": {},
+                    "f:namespace": {},
+                    "f:server": {}
+                  },
+                  "f:project": {},
+                  "f:source": {
+                    ".": {},
+                    "f:helm": {
+                      ".": {},
+                      "f:valueFiles": {}
+                    },
+                    "f:path": {},
+                    "f:repoURL": {}
+                  }
+                },
+                "f:status": {
+                  ".": {},
+                  "f:health": {},
+                  "f:summary": {},
+                  "f:sync": {
+                    ".": {},
+                    "f:comparedTo": {
+                      ".": {},
+                      "f:destination": {},
+                      "f:source": {
+                        ".": {},
+                        "f:repoURL": {}
+                      }
+                    },
+                    "f:status": {}
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "spec": {
+          "source": {
+            "repoURL": "",
+            "path": "",
+            "helm": {
+              "valueFiles": []
+            }
+          },
+          "destination": {
+            "server": "",
+            "namespace": ""
+          },
+          "project": ""
+        },
+        "status": {
+          "sync": {
+            "status": "",
+            "comparedTo": {
+              "source": {
+                "repoURL": ""
+              },
+              "destination": {}
+            }
+          },
+          "health": {},
+          "summary": {}
+        }
+      }
+    },
+    {
+      "operation": "get_applications",
+      "title": "Get Applications",
+      "description": "Retrieve a list of applications from Argo CD.",
+      "category": "investigation",
+      "annotation": "get_applications",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Application Name",
+          "description": "Specify the name of the application to retrieve details from Argo CD.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "name",
+          "tooltip": "Specify the name of the application to retrieve details from Argo CD."
+        },
+        {
+          "title": "Projects",
+          "description": "Specify the name of the project based on which you want to retrieve details from Argo CD.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "projects",
+          "tooltip": "Specify the name of the project based on which you want to retrieve details from Argo CD."
+        },
+        {
+          "title": "Additional Properties",
+          "description": "Additional fields, in the JSON format, based on which you want to retrieve details from Argo CD.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "additional_properties",
+          "tooltip": "Additional fields, in the JSON format, based on which you want to retrieve details from Argo CD."
+        }
+      ],
+      "output_schema": {
+        "metadata": {
+          "resourceVersion": ""
+        },
+        "items": [
+          {
+            "metadata": {
+              "name": "",
+              "namespace": "",
+              "uid": "",
+              "resourceVersion": "",
+              "generation": "",
+              "creationTimestamp": "",
+              "annotations": {
+                "kubectl.kubernetes.io/last-applied-configuration": ""
+              },
+              "managedFields": [
+                {
+                  "manager": "",
+                  "operation": "",
+                  "apiVersion": "",
+                  "time": "",
+                  "fieldsType": "",
+                  "fieldsV1": {
+                    "f:metadata": {
+                      "f:annotations": {
+                        ".": {},
+                        "f:kubectl.kubernetes.io/last-applied-configuration": {}
+                      }
+                    },
+                    "f:spec": {
+                      ".": {},
+                      "f:destination": {
+                        ".": {},
+                        "f:namespace": {}
+                      },
+                      "f:ignoreDifferences": {},
+                      "f:project": {},
+                      "f:source": {
+                        ".": {},
+                        "f:helm": {
+                          ".": {},
+                          "f:releaseName": {},
+                          "f:valueFiles": {}
+                        },
+                        "f:path": {},
+                        "f:repoURL": {}
+                      },
+                      "f:syncPolicy": {
+                        ".": {},
+                        "f:syncOptions": {}
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            "spec": {
+              "source": {
+                "repoURL": "",
+                "targetRevision": "",
+                "helm": {
+                  "valueFiles": [],
+                  "releaseName": ""
+                }
+              },
+              "destination": {
+                "server": "",
+                "namespace": ""
+              },
+              "project": "",
+              "syncPolicy": {
+                "syncOptions": []
+              },
+              "ignoreDifferences": [
+                {
+                  "group": "",
+                  "kind": "",
+                  "jsonPointers": []
+                }
+              ]
+            },
+            "status": {
+              "resources": [
+                {
+                  "version": "",
+                  "kind": "",
+                  "namespace": "",
+                  "name": "",
+                  "status": "",
+                  "health": {
+                    "status": ""
+                  }
+                }
+              ],
+              "sync": {
+                "status": "",
+                "comparedTo": {
+                  "source": {
+                    "repoURL": "",
+                    "path": "",
+                    "targetRevision": "",
+                    "helm": {
+                      "valueFiles": [],
+                      "releaseName": ""
+                    }
+                  },
+                  "destination": {
+                    "server": "",
+                    "namespace": ""
+                  },
+                  "ignoreDifferences": [
+                    {
+                      "group": "",
+                      "kind": "",
+                      "jsonPointers": []
+                    }
+                  ]
+                },
+                "revision": ""
+              },
+              "health": {
+                "status": ""
+              },
+              "reconciledAt": "",
+              "operationState": {
+                "operation": {
+                  "sync": {
+                    "revision": "",
+                    "syncOptions": []
+                  },
+                  "initiatedBy": {
+                    "automated": ""
+                  },
+                  "retry": {
+                    "limit": ""
+                  }
+                },
+                "phase": "",
+                "message": "",
+                "syncResult": {
+                  "resources": [
+                    {
+                      "group": "",
+                      "version": "",
+                      "kind": "",
+                      "namespace": "",
+                      "name": "",
+                      "message": "",
+                      "hookType": "",
+                      "hookPhase": "",
+                      "syncPhase": ""
+                    }
+                  ],
+                  "revision": "",
+                  "source": {
+                    "repoURL": "",
+                    "path": "",
+                    "targetRevision": "",
+                    "helm": {
+                      "valueFiles": [],
+                      "releaseName": ""
+                    }
+                  }
+                },
+                "startedAt": "",
+                "finishedAt": "",
+                "retryCount": ""
+              },
+              "sourceType": "",
+              "summary": {},
+              "controllerNamespace": ""
+            }
+          }
+        ]
+      }
+    },
+    {
+      "operation": "get_application_by_name",
+      "title": "Get Application by Name",
+      "description": "Retrieves a specific application from Argo CD based on the application name that you have specified.",
+      "category": "investigation",
+      "annotation": "get_application_by_name",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Application Name",
+          "name": "name",
+          "description": "Specify the name of the application to retrieve its details from Argo CD.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Specify the name of the application to retrieve its details from Argo CD."
+        }
+      ],
+      "output_schema": {
+        "metadata": {
+          "name": "",
+          "namespace": "",
+          "uid": "",
+          "resourceVersion": "",
+          "generation": "",
+          "creationTimestamp": "",
+          "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": ""
+          },
+          "managedFields": [
+            {
+              "manager": "",
+              "operation": "",
+              "apiVersion": "",
+              "time": "",
+              "fieldsType": "",
+              "fieldsV1": {
+                "f:metadata": {
+                  "f:annotations": {
+                    ".": {},
+                    "f:kubectl.kubernetes.io/last-applied-configuration": {}
+                  }
+                },
+                "f:spec": {
+                  ".": {},
+                  "f:destination": {
+                    ".": {},
+                    "f:namespace": {}
+                  },
+                  "f:ignoreDifferences": {},
+                  "f:project": {},
+                  "f:source": {
+                    ".": {},
+                    "f:helm": {
+                      ".": {},
+                      "f:releaseName": {},
+                      "f:valueFiles": {}
+                    },
+                    "f:path": {},
+                    "f:repoURL": {}
+                  },
+                  "f:syncPolicy": {
+                    ".": {},
+                    "f:syncOptions": {}
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "spec": {
+          "source": {
+            "repoURL": "",
+            "targetRevision": "",
+            "helm": {
+              "valueFiles": [],
+              "releaseName": ""
+            }
+          },
+          "destination": {
+            "server": "",
+            "namespace": ""
+          },
+          "project": "",
+          "syncPolicy": {
+            "syncOptions": []
+          },
+          "ignoreDifferences": [
+            {
+              "group": "",
+              "kind": "",
+              "jsonPointers": []
+            }
+          ]
+        },
+        "status": {
+          "resources": [
+            {
+              "version": "",
+              "kind": "",
+              "namespace": "",
+              "name": "",
+              "status": "",
+              "health": {
+                "status": ""
+              }
+            }
+          ],
+          "sync": {
+            "status": "",
+            "comparedTo": {
+              "source": {
+                "repoURL": "",
+                "path": "",
+                "targetRevision": "",
+                "helm": {
+                  "valueFiles": [],
+                  "releaseName": ""
+                }
+              },
+              "destination": {
+                "server": "",
+                "namespace": ""
+              },
+              "ignoreDifferences": [
+                {
+                  "group": "",
+                  "kind": "",
+                  "jsonPointers": []
+                }
+              ]
+            },
+            "revision": ""
+          },
+          "health": {
+            "status": ""
+          },
+          "reconciledAt": "",
+          "operationState": {
+            "operation": {
+              "sync": {
+                "revision": "",
+                "syncOptions": []
+              },
+              "initiatedBy": {
+                "automated": ""
+              },
+              "retry": {
+                "limit": ""
+              }
+            },
+            "phase": "",
+            "message": "",
+            "syncResult": {
+              "resources": [
+                {
+                  "group": "",
+                  "version": "",
+                  "kind": "",
+                  "namespace": "",
+                  "name": "",
+                  "message": "",
+                  "hookType": "",
+                  "hookPhase": "",
+                  "syncPhase": ""
+                }
+              ],
+              "revision": "",
+              "source": {
+                "repoURL": "",
+                "path": "",
+                "targetRevision": "",
+                "helm": {
+                  "valueFiles": [],
+                  "releaseName": ""
+                }
+              }
+            },
+            "startedAt": "",
+            "finishedAt": "",
+            "retryCount": ""
+          },
+          "sourceType": "",
+          "summary": {},
+          "controllerNamespace": ""
+        }
+      }
+    },
+    {
+      "operation": "update_application",
+      "title": "Update Application",
+      "description": "Updates an application in Argo CD based on the application name, source, destination, and other input parameters that you have specified.",
+      "category": "investigation",
+      "annotation": "update_application",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Application Name",
+          "description": "Specify the name of the application to update details in Argo CD.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "name",
+          "tooltip": "Specify the name of the application to update details in Argo CD."
+        },
+        {
+          "title": "Source",
+          "description": "Specify the source, in the JSON format, based on which you want to update application in Argo CD.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "source",
+          "tooltip": "Specify the source, in the JSON format, based on which you want to update application in Argo CD.",
+          "value": {
+            "repoURL": "",
+            "path": "",
+            "helm": {
+              "valueFiles": []
+            }
+          }
+        },
+        {
+          "title": "Destination",
+          "description": "Specify the destination, in the JSON format, based on which you want to update application in Argo CD.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "destination",
+          "tooltip": "Specify the destination, in the JSON format, based on which you want to retrieve application in Argo CD.",
+          "value": {
+            "server": "",
+            "namespace": ""
+          }
+        },
+        {
+          "title": "Metadata",
+          "description": "Specify the metadata, in the JSON format, based on which you want to update application in Argo CD.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "metadata",
+          "tooltip": "Specify the metadata, in the JSON format, based on which you want to update application in Argo CD."
+        },
+        {
+          "title": "Specifications",
+          "description": "Specify the specifications, in the JSON format, based on which you want to update application in Argo CD.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "spec",
+          "tooltip": "Specify the specifications, in the JSON format, based on which you want to update application in Argo CD."
+        },
+        {
+          "title": "Operation",
+          "description": "Specify the operation, in the JSON format, based on which you want to update application in Argo CD.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "operation",
+          "tooltip": "Specify the operation, in the JSON format, based on which you want to update application in Argo CD."
+        },
+        {
+          "title": "Additional Properties",
+          "description": "Additional fields, in the JSON format, based on which you want to update application in Argo CD.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "additional_properties",
+          "tooltip": "Additional fields, in the JSON format, based on which you want to update application in Argo CD."
+        }
+      ],
+      "output_schema": {
+        "metadata": {
+          "name": "",
+          "namespace": "",
+          "uid": "",
+          "resourceVersion": "",
+          "generation": "",
+          "creationTimestamp": "",
+          "managedFields": [
+            {
+              "manager": "",
+              "operation": "",
+              "apiVersion": "",
+              "time": "",
+              "fieldsType": "",
+              "fieldsV1": {
+                "f:spec": {
+                  ".": {},
+                  "f:destination": {
+                    ".": {},
+                    "f:namespace": {},
+                    "f:server": {}
+                  },
+                  "f:project": {},
+                  "f:source": {
+                    ".": {},
+                    "f:helm": {
+                      ".": {},
+                      "f:valueFiles": {}
+                    },
+                    "f:path": {},
+                    "f:repoURL": {}
+                  }
+                },
+                "f:status": {
+                  ".": {},
+                  "f:health": {},
+                  "f:summary": {},
+                  "f:sync": {
+                    ".": {},
+                    "f:comparedTo": {
+                      ".": {},
+                      "f:destination": {},
+                      "f:source": {
+                        ".": {},
+                        "f:repoURL": {}
+                      }
+                    },
+                    "f:status": {}
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "spec": {
+          "source": {
+            "repoURL": "",
+            "path": "",
+            "helm": {
+              "valueFiles": []
+            }
+          },
+          "destination": {
+            "server": "",
+            "namespace": ""
+          },
+          "project": ""
+        },
+        "status": {
+          "sync": {
+            "status": "",
+            "comparedTo": {
+              "source": {
+                "repoURL": ""
+              },
+              "destination": {}
+            }
+          },
+          "health": {},
+          "summary": {}
+        }
+      }
+    },
+    {
+      "operation": "delete_application",
+      "title": "Delete Application",
+      "description": "Delete an application in Argo CD based on the application name you have specified.",
+      "category": "investigation",
+      "annotation": "delete_application",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Application Name",
+          "name": "name",
+          "description": "Specify the name of the application to delete in Argo CD.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Specify the name of the application to delete in Argo CD."
+        }
+      ],
+      "output_schema": {
+        "message": ""
+      }
+    },
+    {
+      "operation": "get_clusters",
+      "title": "Get Clusters",
+      "description": "Retrieve a list of clusters from Argo CD.",
+      "category": "investigation",
+      "annotation": "get_clusters",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Server Name",
+          "description": "Specify the name of the server based on which you want to retrieve clusters from Argo CD.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "server",
+          "tooltip": "Specify the name of the server based on which you want to retrieve clusters from Argo CD."
+        },
+        {
+          "title": "Cluster Name",
+          "description": "Specify the name of the cluster to retrieve details from Argo CD.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "name",
+          "tooltip": "Specify the name of the cluster to retrieve details from Argo CD."
+        }
+      ],
+      "output_schema": {
+        "metadata": {},
+        "items": [
+          {
+            "server": "",
+            "name": "",
+            "config": {
+              "tlsClientConfig": {
+                "insecure": "",
+                "serverName": "",
+                "certData": ""
+              }
+            },
+            "connectionState": {
+              "status": "",
+              "message": "",
+              "attemptedAt": ""
+            },
+            "serverVersion": "",
+            "info": {
+              "connectionState": {
+                "status": "",
+                "message": "",
+                "attemptedAt": ""
+              },
+              "serverVersion": "",
+              "cacheInfo": {
+                "resourcesCount": "",
+                "apisCount": "",
+                "lastCacheSyncTime": ""
+              },
+              "applicationsCount": "",
+              "apiVersions": []
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

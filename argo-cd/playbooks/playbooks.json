@@ -1,0 +1,550 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "@type": "WorkflowCollection",
+      "name": "Sample - Argo CD - 1.0.0",
+      "description": "Sample playbooks for \"Argo CD\" connector. If you are planning to use any of the sample playbooks in your environment, ensure that you clone those playbooks and move them to a different collection, since the sample playbook collection gets deleted during connector upgrade and delete.",
+      "visible": true,
+      "image": null,
+      "uuid": "d30781d7-2bcf-42a6-8f55-9fa3a4beeb1a",
+      "id": 189,
+      "deletedAt": null,
+      "importedBy": [],
+      "recordTags": [
+        "Argo",
+        "argo-cd"
+      ],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Applications",
+          "aliasName": null,
+          "tag": "#Argo CD",
+          "description": "Retrieve a list of applications from Argo CD.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1731572485,
+          "collection": "/api/3/workflow_collections/d30781d7-2bcf-42a6-8f55-9fa3a4beeb1a",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/86a9c689-a5b3-4247-9771-f798e5aa278a",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Applications",
+              "description": null,
+              "arguments": {
+                "name": "Argo CD",
+                "config": "321df3d4-6bfe-414f-a06d-754b071c5c07",
+                "params": {
+                  "name": "",
+                  "projects": "",
+                  "additional_properties": "{}"
+                },
+                "version": "1.0.0",
+                "connector": "argo-cd",
+                "operation": "get_applications",
+                "operationTitle": "Get Applications",
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "5033a0a7-8ce0-4e0b-ac1e-0f8a1c65065d"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "86a9c689-a5b3-4247-9771-f798e5aa278a"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start-> Get Applications",
+              "targetStep": "/api/3/workflow_steps/5033a0a7-8ce0-4e0b-ac1e-0f8a1c65065d",
+              "sourceStep": "/api/3/workflow_steps/86a9c689-a5b3-4247-9771-f798e5aa278a",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "957f4ff4-7a8d-492e-9d4c-ab464f0b928b"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "0d7f6244-596b-432d-ad3e-2265c2b0450a",
+          "id": 2475,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Argo",
+            "argo-cd"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Create Application",
+          "aliasName": null,
+          "tag": "#Argo CD",
+          "description": "Creates a application in Argo CD based on the application name, source, destination, and other input parameters that you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1731572535,
+          "collection": "/api/3/workflow_collections/d30781d7-2bcf-42a6-8f55-9fa3a4beeb1a",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/1fac313d-fe18-4428-a4cd-cf0c9d690ee3",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Create Application",
+              "description": null,
+              "arguments": {
+                "name": "Argo CD",
+                "config": "321df3d4-6bfe-414f-a06d-754b071c5c07",
+                "params": {
+                  "name": "test",
+                  "spec": "{}",
+                  "source": "{\n  \"helm\": {\n    \"valueFiles\": [\n    ]\n  },\n  \"path\": \"\",\n  \"repoURL\": \"\"\n}",
+                  "metadata": "{}",
+                  "operation": "{}",
+                  "destination": "{\n  \"server\": \"\",\n  \"namespace\": \"\"\n}",
+                  "additional_properties": ""
+                },
+                "version": "1.0.0",
+                "connector": "argo-cd",
+                "operation": "create_application",
+                "operationTitle": "Create Application",
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "503221c6-5f4f-438c-ad3d-54c7dca566ae"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "1fac313d-fe18-4428-a4cd-cf0c9d690ee3"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start-> Create Application",
+              "targetStep": "/api/3/workflow_steps/503221c6-5f4f-438c-ad3d-54c7dca566ae",
+              "sourceStep": "/api/3/workflow_steps/1fac313d-fe18-4428-a4cd-cf0c9d690ee3",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "d700cd64-c66c-4ce4-bc61-2fe0f5b9f367"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "10a7f720-be1c-47c6-a51f-1f130a7ace5c",
+          "id": 2474,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Argo",
+            "argo-cd"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Delete Application",
+          "aliasName": null,
+          "tag": "#Argo CD",
+          "description": "Delete an application in Argo CD based on the application name you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1731568958,
+          "collection": "/api/3/workflow_collections/d30781d7-2bcf-42a6-8f55-9fa3a4beeb1a",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/f9eb24f4-d968-4178-812d-1eef81a64b33",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Delete Application",
+              "description": null,
+              "arguments": {
+                "name": "Argo CD",
+                "config": "321df3d4-6bfe-414f-a06d-754b071c5c07",
+                "params": {
+                  "name": "test"
+                },
+                "version": "1.0.0",
+                "connector": "argo-cd",
+                "operation": "delete_application",
+                "operationTitle": "Delete Application",
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "8b230b01-4c57-4e6f-a337-6dafe5693c85"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "f9eb24f4-d968-4178-812d-1eef81a64b33"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start-> Delete Application",
+              "targetStep": "/api/3/workflow_steps/8b230b01-4c57-4e6f-a337-6dafe5693c85",
+              "sourceStep": "/api/3/workflow_steps/f9eb24f4-d968-4178-812d-1eef81a64b33",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "508f3168-9c12-4936-b8c6-dde43d060e09"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "1d465b3c-eb12-431c-a571-394b5832bee7",
+          "id": 2478,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Argo",
+            "argo-cd"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Update Application",
+          "aliasName": null,
+          "tag": "#Argo CD",
+          "description": "Updates an application in Argo CD based on the application name, source, destination, and other input parameters that you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1731572567,
+          "collection": "/api/3/workflow_collections/d30781d7-2bcf-42a6-8f55-9fa3a4beeb1a",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/05a21c99-a822-43bf-874e-63fe073b0803",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "05a21c99-a822-43bf-874e-63fe073b0803"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Update Application",
+              "description": null,
+              "arguments": {
+                "name": "Argo CD",
+                "config": "321df3d4-6bfe-414f-a06d-754b071c5c07",
+                "params": {
+                  "name": "test",
+                  "spec": "",
+                  "source": "{\n  \"helm\": {\n    \"valueFiles\": [\n    ]\n  },\n  \"path\": \"\",\n  \"repoURL\": \"\"\n}",
+                  "metadata": "",
+                  "operation": "",
+                  "destination": "{\n  \"server\": \"\",\n  \"namespace\": \"\"\n}",
+                  "additional_properties": ""
+                },
+                "version": "1.0.0",
+                "connector": "argo-cd",
+                "operation": "update_application",
+                "operationTitle": "Update Application",
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "3a40086f-60e3-4d27-82cb-2e2a32c004c0"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start-> Update Application",
+              "targetStep": "/api/3/workflow_steps/3a40086f-60e3-4d27-82cb-2e2a32c004c0",
+              "sourceStep": "/api/3/workflow_steps/05a21c99-a822-43bf-874e-63fe073b0803",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "b3065c3f-d706-4bf0-b870-8eb08e629fbc"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "99f8db8a-7b88-44bb-9df9-daf9fcbbbfba",
+          "id": 2477,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Argo",
+            "argo-cd"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Clusters",
+          "aliasName": null,
+          "tag": "#Argo CD",
+          "description": "Retrieve a list of clusters from Argo CD.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1731572472,
+          "collection": "/api/3/workflow_collections/d30781d7-2bcf-42a6-8f55-9fa3a4beeb1a",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/eab4b510-842e-4ba2-8ad3-18d53886623a",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Clusters",
+              "description": null,
+              "arguments": {
+                "name": "Argo CD",
+                "config": "321df3d4-6bfe-414f-a06d-754b071c5c07",
+                "params": {
+                  "name": "",
+                  "server": ""
+                },
+                "version": "1.0.0",
+                "connector": "argo-cd",
+                "operation": "get_clusters",
+                "operationTitle": "Get Clusters",
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "e85e5cf3-6625-427b-a5df-7308ce606f84"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "eab4b510-842e-4ba2-8ad3-18d53886623a"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start-> Get Clusters",
+              "targetStep": "/api/3/workflow_steps/e85e5cf3-6625-427b-a5df-7308ce606f84",
+              "sourceStep": "/api/3/workflow_steps/eab4b510-842e-4ba2-8ad3-18d53886623a",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "fbc29c9e-96ab-43f4-b179-3267b965e11c"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "9d5b3353-2f34-46d9-9a71-7147dcf17ba0",
+          "id": 2479,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Argo",
+            "argo-cd"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Application by Name",
+          "aliasName": null,
+          "tag": "#Argo CD",
+          "description": "Retrieves a specific application from Argo CD based on the application name that you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1731572496,
+          "collection": "/api/3/workflow_collections/d30781d7-2bcf-42a6-8f55-9fa3a4beeb1a",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/1f6858bd-d2f0-44fe-9558-3fc572c5d2bb",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Application by Name",
+              "description": null,
+              "arguments": {
+                "name": "Argo CD",
+                "config": "''",
+                "params": {
+                  "name": ""
+                },
+                "version": "1.0.0",
+                "connector": "argo-cd",
+                "operation": "get_application_by_name",
+                "operationTitle": "Get Application by Name"
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "29608fd1-c1b7-4b99-bdb1-387a2bedae05"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "1f6858bd-d2f0-44fe-9558-3fc572c5d2bb"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start-> Get Application by Name",
+              "targetStep": "/api/3/workflow_steps/29608fd1-c1b7-4b99-bdb1-387a2bedae05",
+              "sourceStep": "/api/3/workflow_steps/1f6858bd-d2f0-44fe-9558-3fc572c5d2bb",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "5e528d51-3c27-4e8d-bd6b-c302cfdfa50a"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "f6f53071-12b3-42cd-ab82-dc420c81d3c0",
+          "id": 2476,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Argo",
+            "argo-cd"
+          ]
+        }
+      ]
+    }
+  ],
+  "exported_tags": [
+    "Argo",
+    "argo-cd"
+  ]
+}
