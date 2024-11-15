@@ -50,7 +50,7 @@
     {
       "operation": "create_application",
       "title": "Create Application",
-      "description": "Creates a application in Argo CD based on the application name, source, destination, and other input parameters that you have specified.",
+      "description": "Creates an application in Argo CD based on the application name, source, destination, and other input parameters that you have specified.",
       "category": "investigation",
       "annotation": "create_application",
       "enabled": true,
@@ -104,7 +104,11 @@
           "visible": true,
           "type": "json",
           "name": "metadata",
-          "tooltip": "Specify the metadata, in the JSON format, based on which you want to create application in Argo CD."
+          "tooltip": "Specify the metadata, in the JSON format, based on which you want to create application in Argo CD.",
+          "value": {
+            "namespace": "",
+            "labels": {}
+          }
         },
         {
           "title": "Specifications",
@@ -114,7 +118,10 @@
           "visible": true,
           "type": "json",
           "name": "spec",
-          "tooltip": "Specify the specifications, in the JSON format, based on which you want to create application in Argo CD."
+          "tooltip": "Specify the specifications, in the JSON format, based on which you want to create application in Argo CD.",
+          "value": {
+            "project": ""
+          }
         },
         {
           "title": "Operation",
@@ -124,7 +131,10 @@
           "visible": true,
           "type": "json",
           "name": "operation",
-          "tooltip": "Specify the operation, in the JSON format, based on which you want to create application in Argo CD."
+          "tooltip": "Specify the operation, in the JSON format, based on which you want to create application in Argo CD.",
+          "value": {
+            "info": {}
+          }
         },
         {
           "title": "Additional Properties",
@@ -669,7 +679,7 @@
           "visible": true,
           "type": "json",
           "name": "destination",
-          "tooltip": "Specify the destination, in the JSON format, based on which you want to retrieve application in Argo CD.",
+          "tooltip": "Specify the destination, in the JSON format, based on which you want to update application in Argo CD.",
           "value": {
             "server": "",
             "namespace": ""
@@ -683,7 +693,10 @@
           "visible": true,
           "type": "json",
           "name": "metadata",
-          "tooltip": "Specify the metadata, in the JSON format, based on which you want to update application in Argo CD."
+          "tooltip": "Specify the metadata, in the JSON format, based on which you want to update application in Argo CD.",
+          "value": {
+            "labels": {}
+          }
         },
         {
           "title": "Specifications",
@@ -693,7 +706,10 @@
           "visible": true,
           "type": "json",
           "name": "spec",
-          "tooltip": "Specify the specifications, in the JSON format, based on which you want to update application in Argo CD."
+          "tooltip": "Specify the specifications, in the JSON format, based on which you want to update application in Argo CD.",
+          "value": {
+            "project": ""
+          }
         },
         {
           "title": "Operation",
@@ -703,7 +719,10 @@
           "visible": true,
           "type": "json",
           "name": "operation",
-          "tooltip": "Specify the operation, in the JSON format, based on which you want to update application in Argo CD."
+          "tooltip": "Specify the operation, in the JSON format, based on which you want to update application in Argo CD.",
+          "value": {
+            "info": {}
+          }
         },
         {
           "title": "Additional Properties",

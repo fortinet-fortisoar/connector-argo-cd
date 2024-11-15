@@ -480,7 +480,7 @@
               "description": null,
               "arguments": {
                 "name": "Argo CD",
-                "config": "''",
+                "config": "",
                 "params": {
                   "name": ""
                 },
