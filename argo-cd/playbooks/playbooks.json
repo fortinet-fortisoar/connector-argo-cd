@@ -8,7 +8,7 @@
       "visible": true,
       "image": null,
       "uuid": "d30781d7-2bcf-42a6-8f55-9fa3a4beeb1a",
-      "id": 189,
+      "id": 193,
       "deletedAt": null,
       "importedBy": [],
       "recordTags": [
@@ -93,7 +93,7 @@
           "groups": [],
           "priority": null,
           "uuid": "0d7f6244-596b-432d-ad3e-2265c2b0450a",
-          "id": 2475,
+          "id": 2567,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null,
@@ -184,7 +184,7 @@
           "groups": [],
           "priority": null,
           "uuid": "10a7f720-be1c-47c6-a51f-1f130a7ace5c",
-          "id": 2474,
+          "id": 2568,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null,
@@ -269,7 +269,113 @@
           "groups": [],
           "priority": null,
           "uuid": "1d465b3c-eb12-431c-a571-394b5832bee7",
-          "id": 2478,
+          "id": 2569,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Argo",
+            "argo-cd"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Execute an API Call",
+          "aliasName": null,
+          "tag": null,
+          "description": "Sends an API request to any API endpoint based on specified HTTP method, endpoint, and other input parameters that you have specified, enabling flexible API interactions tailored to user needs.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1732688770,
+          "collection": "/api/3/workflow_collections/d30781d7-2bcf-42a6-8f55-9fa3a4beeb1a",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/c997b371-9da4-44d4-8a4b-3f60004e75b4",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Execute an API Call",
+              "description": null,
+              "arguments": {
+                "name": "Argo CD",
+                "config": "849ce94d-38f2-4cfc-af88-de86f8f27e06",
+                "params": {
+                  "method": "GET",
+                  "payload": "",
+                  "endpoint": "/applications",
+                  "query_params": ""
+                },
+                "version": "1.0.0",
+                "connector": "argo-cd",
+                "operation": "send_custom_request",
+                "operationTitle": "Execute an API Call",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "6769639c-1bc9-408f-a70c-9a47f0bd5530"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "89779510-5b99-4709-8ab5-59fcd54d861f",
+                "title": "Argo CD: Execute an API Call",
+                "resources": [
+                  "alerts"
+                ],
+                "__triggerLimit": true,
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "triggerOnSource": true,
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "showToasterMessage": {
+                  "visible": false,
+                  "messageVisible": true
+                },
+                "triggerOnReplicate": false,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "c997b371-9da4-44d4-8a4b-3f60004e75b4"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Execute an API Call",
+              "targetStep": "/api/3/workflow_steps/6769639c-1bc9-408f-a70c-9a47f0bd5530",
+              "sourceStep": "/api/3/workflow_steps/c997b371-9da4-44d4-8a4b-3f60004e75b4",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "b0282297-4d7d-449e-9a7c-360487391e5e"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "82405f0f-a80c-41d2-aa07-78868e92d2c6",
+          "id": 2573,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null,
@@ -360,7 +466,7 @@
           "groups": [],
           "priority": null,
           "uuid": "99f8db8a-7b88-44bb-9df9-daf9fcbbbfba",
-          "id": 2477,
+          "id": 2570,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null,
@@ -446,7 +552,7 @@
           "groups": [],
           "priority": null,
           "uuid": "9d5b3353-2f34-46d9-9a71-7147dcf17ba0",
-          "id": 2479,
+          "id": 2571,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null,
@@ -530,7 +636,7 @@
           "groups": [],
           "priority": null,
           "uuid": "f6f53071-12b3-42cd-ab82-dc420c81d3c0",
-          "id": 2476,
+          "id": 2572,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null,
