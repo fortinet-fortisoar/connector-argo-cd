@@ -7,7 +7,7 @@
   "cs_approved": true,
   "cs_compatible": true,
   "contributor": "",
-  "help_online": "",
+  "help_online": "https://docs.fortinet.com/document/fortisoar/1.0.0/argo-cd/1005/argo-cd-v1-0-0",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
   "category": "DevOps and Digital Operations",
@@ -35,14 +35,14 @@
       },
       {
         "title": "Verify SSL",
-        "description": "Specifies whether the SSL certificate for the server is to be verified. By default, this option is set to True.",
+        "description": "Specifies whether the SSL certificate for the server is to be verified. By default, this option is selected, i.e., set to true.",
         "name": "verify_ssl",
         "type": "checkbox",
         "required": false,
         "editable": true,
         "visible": true,
         "value": true,
-        "tooltip": "Specifies whether the SSL certificate for the server is to be verified. By default, this option is set to True."
+        "tooltip": "Specifies whether the SSL certificate for the server is to be verified. By default, this option is selected, i.e., set to true."
       }
     ]
   },
@@ -67,13 +67,13 @@
         },
         {
           "title": "Source",
-          "description": "Specify the source, in the JSON format, based on which you want to create application in Argo CD.",
+          "description": "Specify the source, in the JSON format, based on which to create application in Argo CD.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "json",
           "name": "source",
-          "tooltip": "Specify the source, in the JSON format, based on which you want to create application in Argo CD.",
+          "tooltip": "Specify the source, in the JSON format, based on which to create application in Argo CD.",
           "value": {
             "repoURL": "",
             "path": "",
@@ -84,13 +84,13 @@
         },
         {
           "title": "Destination",
-          "description": "Specify the destination, in the JSON format, based on which you want to create application in Argo CD.",
+          "description": "Specify the destination, in the JSON format, based on which to create application in Argo CD.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "json",
           "name": "destination",
-          "tooltip": "Specify the destination, in the JSON format, based on which you want to create application in Argo CD.",
+          "tooltip": "Specify the destination, in the JSON format, based on which to create application in Argo CD.",
           "value": {
             "server": "",
             "namespace": ""
@@ -98,13 +98,13 @@
         },
         {
           "title": "Metadata",
-          "description": "Specify the metadata, in the JSON format, based on which you want to create application in Argo CD.",
+          "description": "(Optional) Specify the metadata, in the JSON format, based on which to create application in Argo CD.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "json",
           "name": "metadata",
-          "tooltip": "Specify the metadata, in the JSON format, based on which you want to create application in Argo CD.",
+          "tooltip": "(Optional) Specify the metadata, in the JSON format, based on which to create application in Argo CD.",
           "value": {
             "namespace": "",
             "labels": {}
@@ -112,39 +112,39 @@
         },
         {
           "title": "Specifications",
-          "description": "Specify the specifications, in the JSON format, based on which you want to create application in Argo CD.",
+          "description": "(Optional) Specify the specifications, in the JSON format, based on which to create application in Argo CD.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "json",
           "name": "spec",
-          "tooltip": "Specify the specifications, in the JSON format, based on which you want to create application in Argo CD.",
+          "tooltip": "(Optional) Specify the specifications, in the JSON format, based on which to create application in Argo CD.",
           "value": {
             "project": ""
           }
         },
         {
           "title": "Operation",
-          "description": "Specify the operation, in the JSON format, based on which you want to create application in Argo CD.",
+          "description": "(Optional) Specify the operation, in the JSON format, based on which to create application in Argo CD.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "json",
           "name": "operation",
-          "tooltip": "Specify the operation, in the JSON format, based on which you want to create application in Argo CD.",
+          "tooltip": "(Optional) Specify the operation, in the JSON format, based on which to create application in Argo CD.",
           "value": {
             "info": {}
           }
         },
         {
           "title": "Additional Properties",
-          "description": "Additional fields, in the JSON format, based on which you want to create application in Argo CD.",
+          "description": "(Optional) Additional fields, in the JSON format, based on which to create application in Argo CD.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "json",
           "name": "additional_properties",
-          "tooltip": "Additional fields, in the JSON format, based on which you want to create application in Argo CD."
+          "tooltip": "(Optional) Additional fields, in the JSON format, based on which to create application in Argo CD."
         }
       ],
       "output_schema": {
@@ -234,40 +234,40 @@
     {
       "operation": "get_applications",
       "title": "Get Applications",
-      "description": "Retrieve a list of applications from Argo CD.",
+      "description": "Retrieve a list of applications from Argo CD based on the application name, projects, and other filter criteria that you have specified.",
       "category": "investigation",
       "annotation": "get_applications",
       "enabled": true,
       "parameters": [
         {
           "title": "Application Name",
-          "description": "Specify the name of the application to retrieve details from Argo CD.",
+          "description": "(Optional) Specify the name of the application to filter the results retrieved from Argo CD.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "name",
-          "tooltip": "Specify the name of the application to retrieve details from Argo CD."
+          "tooltip": "(Optional) Specify the name of the application to filter the results retrieved from Argo CD."
         },
         {
           "title": "Projects",
-          "description": "Specify the name of the project based on which you want to retrieve details from Argo CD.",
+          "description": "(Optional) Specify the name of the project to filter the results retrieved from Argo CD.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "projects",
-          "tooltip": "Specify the name of the project based on which you want to retrieve details from Argo CD."
+          "tooltip": "(Optional) Specify the name of the project to filter the results retrieved from Argo CD."
         },
         {
           "title": "Additional Properties",
-          "description": "Additional fields, in the JSON format, based on which you want to retrieve details from Argo CD.",
+          "description": "(Optional) Additional fields, in the JSON format, to filter the results retrieved from Argo CD.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "json",
           "name": "additional_properties",
-          "tooltip": "Additional fields, in the JSON format, based on which you want to retrieve details from Argo CD."
+          "tooltip": "(Optional) Additional fields, in the JSON format, to filter the results retrieved from Argo CD."
         }
       ],
       "output_schema": {
@@ -646,23 +646,23 @@
       "parameters": [
         {
           "title": "Application Name",
-          "description": "Specify the name of the application to update details in Argo CD.",
+          "description": "Specify the name of the application to update its details in Argo CD.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "name",
-          "tooltip": "Specify the name of the application to update details in Argo CD."
+          "tooltip": "Specify the name of the application to update its details in Argo CD."
         },
         {
           "title": "Source",
-          "description": "Specify the source, in the JSON format, based on which you want to update application in Argo CD.",
+          "description": "Specify the source, in the JSON format, associated with the application to update in Argo CD.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "json",
           "name": "source",
-          "tooltip": "Specify the source, in the JSON format, based on which you want to update application in Argo CD.",
+          "tooltip": "Specify the source, in the JSON format, associated with the application to update in Argo CD.",
           "value": {
             "repoURL": "",
             "path": "",
@@ -673,13 +673,13 @@
         },
         {
           "title": "Destination",
-          "description": "Specify the destination, in the JSON format, based on which you want to update application in Argo CD.",
+          "description": "Specify the destination, in the JSON format, associated with the application to update in Argo CD.",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "json",
           "name": "destination",
-          "tooltip": "Specify the destination, in the JSON format, based on which you want to update application in Argo CD.",
+          "tooltip": "Specify the destination, in the JSON format, associated with the application to update in Argo CD.",
           "value": {
             "server": "",
             "namespace": ""
@@ -687,52 +687,52 @@
         },
         {
           "title": "Metadata",
-          "description": "Specify the metadata, in the JSON format, based on which you want to update application in Argo CD.",
+          "description": "(Optional) Specify the metadata, in the JSON format, associated with the application to update in Argo CD.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "json",
           "name": "metadata",
-          "tooltip": "Specify the metadata, in the JSON format, based on which you want to update application in Argo CD.",
+          "tooltip": "(Optional) Specify the metadata, in the JSON format, associated with the application to update in Argo CD.",
           "value": {
             "labels": {}
           }
         },
         {
           "title": "Specifications",
-          "description": "Specify the specifications, in the JSON format, based on which you want to update application in Argo CD.",
+          "description": "(Optional) Specify the specifications, in the JSON format, associated with the application to update in Argo CD.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "json",
           "name": "spec",
-          "tooltip": "Specify the specifications, in the JSON format, based on which you want to update application in Argo CD.",
+          "tooltip": "(Optional) Specify the specifications, in the JSON format, associated with the application to update in Argo CD.",
           "value": {
             "project": ""
           }
         },
         {
           "title": "Operation",
-          "description": "Specify the operation, in the JSON format, based on which you want to update application in Argo CD.",
+          "description": "(Optional) Specify the operation, in the JSON format, associated with the application to update in Argo CD.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "json",
           "name": "operation",
-          "tooltip": "Specify the operation, in the JSON format, based on which you want to update application in Argo CD.",
+          "tooltip": "(Optional) Specify the operation, in the JSON format, associated with the application to update in Argo CD.",
           "value": {
             "info": {}
           }
         },
         {
           "title": "Additional Properties",
-          "description": "Additional fields, in the JSON format, based on which you want to update application in Argo CD.",
+          "description": "(Optional) Additional fields, in the JSON format, associated with the application to update in Argo CD.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "json",
           "name": "additional_properties",
-          "tooltip": "Additional fields, in the JSON format, based on which you want to update application in Argo CD."
+          "tooltip": "(Optional) Additional fields, in the JSON format, associated with the application to update in Argo CD."
         }
       ],
       "output_schema": {
@@ -822,7 +822,7 @@
     {
       "operation": "delete_application",
       "title": "Delete Application",
-      "description": "Delete an application in Argo CD based on the application name you have specified.",
+      "description": "Delete an application in Argo CD based on the application name that you have specified.",
       "category": "investigation",
       "annotation": "delete_application",
       "enabled": true,
@@ -830,12 +830,12 @@
         {
           "title": "Application Name",
           "name": "name",
-          "description": "Specify the name of the application to delete in Argo CD.",
+          "description": "Specify the name of the application to delete from Argo CD.",
           "type": "text",
           "visible": true,
           "editable": true,
           "required": true,
-          "tooltip": "Specify the name of the application to delete in Argo CD."
+          "tooltip": "Specify the name of the application to delete from Argo CD."
         }
       ],
       "output_schema": {
@@ -845,30 +845,30 @@
     {
       "operation": "get_clusters",
       "title": "Get Clusters",
-      "description": "Retrieve a list of clusters from Argo CD.",
+      "description": "Retrieve a list of clusters from Argo CD based on the server and cluster name that you have specified.",
       "category": "investigation",
       "annotation": "get_clusters",
       "enabled": true,
       "parameters": [
         {
           "title": "Server",
-          "description": "Specify the server based on which you want to retrieve clusters from Argo CD.",
+          "description": "(Optional) Specify the server to filter the results retrieved from Argo CD.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "server",
-          "tooltip": "Specify the server based on which you want to retrieve clusters from Argo CD."
+          "tooltip": "(Optional) Specify the server to filter the results retrieved from Argo CD."
         },
         {
           "title": "Cluster Name",
-          "description": "Specify the name of the cluster to retrieve details from Argo CD.",
+          "description": "(Optional) Specify the name of the cluster to filter the results retrieved from Argo CD.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "name",
-          "tooltip": "Specify the name of the cluster to retrieve details from Argo CD."
+          "tooltip": "(Optional) Specify the name of the cluster to filter the results retrieved from Argo CD."
         }
       ],
       "output_schema": {
@@ -913,7 +913,7 @@
       "operation": "send_custom_request",
       "title": "Execute an API Call",
       "annotation": "send_custom_request",
-      "description": "Sends an API request to any API endpoint based on specified HTTP method, endpoint, and other input parameters that you have specified, enabling flexible API interactions tailored to user needs. ",
+      "description": "Sends an API request to any API endpoint based on specified HTTP method, endpoint, and other input parameters that you have specified. It helps enabling flexible API interactions tailored to user needs.",
       "category": "investigation",
       "visible": true,
       "enabled": true,
@@ -932,13 +932,14 @@
             "PATCH",
             "POST",
             "PUT"
-          ]
+          ],
+          "tooltip": "Select an HTTP action for the request. You can select from the following options:  \n\nDELETE \n\nGET \n\nPATCH \n\nPOST \n\nPUT "
         },
         {
           "title": "Endpoint",
           "name": "endpoint",
           "tooltip": "Specify the target API URL path for example: Alerts/search. Do not include /api/v2/",
-          "description": "Specify the target API URL path for the request. \nFor example, if the website is \"https://example.com \" and URL path is \"/images/pic.jpg\". The endpoint would be \"/images/pic.jpg\". ",
+          "description": "Specify the target API URL path for the request. For example, if the website is \"https://example.com \" and URL path is \"/images/pic.jpg\". The endpoint would be \"/images/pic.jpg\". ",
           "type": "text",
           "visible": true,
           "editable": true,
@@ -948,11 +949,12 @@
         {
           "title": "Query Parameters",
           "name": "query_params",
-          "description": "(Optional) Specify any optional parameters to add to the URL and refine the request. ",
+          "description": "(Optional) Specify any optional parameters to add to the URL and refine the request.",
           "type": "json",
           "visible": true,
           "editable": true,
-          "required": false
+          "required": false,
+          "tooltip": "(Optional) Specify any optional parameters to add to the URL and refine the request."
         },
         {
           "name": "payload",
@@ -961,7 +963,8 @@
           "editable": true,
           "visible": true,
           "required": false,
-          "description": "(Optional) Specify data, as JSON, to be sent as the request payload (typically for POST or PUT requests). "
+          "description": "(Optional) Specify data, as JSON, to be sent as the request payload (typically for POST or PUT requests).",
+          "tooltip": "(Optional) Specify data, as JSON, to be sent as the request payload (typically for POST or PUT requests)."
         }
       ],
       "output_schema": {}
