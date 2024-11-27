@@ -187,6 +187,25 @@ def get_clusters(config, params):
         raise ConnectorError(str(err))
 
 
+def send_custom_request(config, params):
+    try:
+        cd = ArgoCD(config)
+        endpoint = params.get("endpoint")
+        http_method = params.get("method")
+        if params.get("query_params"):
+            query_params = params.get("query_params")
+        else:
+            query_params = None
+        if params.get("payload"):
+            payload = params.get("payload")
+        else:
+            payload = None
+        response = cd.make_rest_call(endpoint, method=http_method, params=query_params, data=json.dumps(payload))
+        return response
+    except Exception as err:
+        raise ConnectorError(str(err))
+
+
 def check_health(config):
     try:
         response = get_applications(config, params={'additional_properties': ''})
@@ -203,5 +222,6 @@ operations = {
     'get_application_by_name': get_application_by_name,
     'update_application': update_application,
     'delete_application': delete_application,
-    'get_clusters': get_clusters
+    'get_clusters': get_clusters,
+    'send_custom_request': send_custom_request
 }
