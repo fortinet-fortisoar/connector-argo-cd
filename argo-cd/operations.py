@@ -1,12 +1,14 @@
 """
 Copyright start
 MIT License
-Copyright (c) 2024 Fortinet Inc
+Copyright (c) 2025 Fortinet Inc
 Copyright end
 """
 
 import requests, json
+import time
 from connectors.core.connector import get_logger, ConnectorError
+from .constants import MAX_RETRY, SLEEP
 
 logger = get_logger('argo-cd')
 
@@ -29,18 +31,21 @@ class ArgoCD(object):
                 'Authorization': 'Bearer ' + self.api_token
             }
             logger.debug("Endpoint {0}".format(url))
-            response = requests.request(method, url, data=data, params=params,
-                                        headers=headers, verify=self.verify_ssl)
-            logger.debug("response_content {0}:{1}".format(response.status_code, response.content))
-            if response.ok or response.status_code == 204:
-                logger.info('Successfully got response for url {0}'.format(url))
-                if 'json' in str(response.headers):
-                    return response.json()
-                else:
-                    return response
-            else:
-                logger.error("{0}".format(response.status_code))
-                raise ConnectorError("{0}:{1}".format(response.status_code, response.text))
+            retry = 0
+            while retry < MAX_RETRY:
+                response = requests.request(method, url, data=data, params=params,
+                                            headers=headers, verify=self.verify_ssl)
+                logger.debug("response_content {0}:{1}".format(response.status_code, response.content))
+                if response.ok or response.status_code == 204:
+                    logger.info('Successfully got response for url {0}'.format(url))
+                    if 'json' in str(response.headers):
+                        return response.json()
+                    else:
+                        return response
+                retry += 1
+                time.sleep(SLEEP)
+            logger.error("{0}".format(response.status_code))
+            raise ConnectorError("{0}:{1}".format(response.status_code, response.text))
         except requests.exceptions.SSLError:
             raise ConnectorError('SSL certificate validation failed')
         except requests.exceptions.ConnectTimeout:

@@ -1,6 +1,6 @@
 {
   "name": "argo-cd",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "label": "Argo CD",
   "description": "Argo CD (short for Argo Continuous Delivery) is a declarative, GitOps continuous delivery tool for Kubernetes. It allows you to manage and deploy applications to Kubernetes clusters using Git repositories as the source of truth for both the desired application state and its configuration.",
   "publisher": "Fortinet",

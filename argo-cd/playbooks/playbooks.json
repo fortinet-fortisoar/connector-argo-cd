@@ -3,7 +3,7 @@
   "data": [
     {
       "@type": "WorkflowCollection",
-      "name": "Sample - Argo CD - 1.0.0",
+      "name": "Sample - Argo CD - 1.0.1",
       "description": "Sample playbooks for \"Argo CD\" connector. If you are planning to use any of the sample playbooks in your environment, ensure that you clone those playbooks and move them to a different collection, since the sample playbook collection gets deleted during connector upgrade and delete.",
       "visible": true,
       "image": null,
@@ -46,7 +46,7 @@
                   "projects": "",
                   "additional_properties": "{}"
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "argo-cd",
                 "operation": "get_applications",
                 "operationTitle": "Get Applications",
@@ -137,7 +137,7 @@
                   "destination": "{\n  \"server\": \"\",\n  \"namespace\": \"\"\n}",
                   "additional_properties": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "argo-cd",
                 "operation": "create_application",
                 "operationTitle": "Create Application",
@@ -222,7 +222,7 @@
                 "params": {
                   "name": "test"
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "argo-cd",
                 "operation": "delete_application",
                 "operationTitle": "Delete Application",
@@ -310,7 +310,7 @@
                   "endpoint": "/applications",
                   "query_params": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "argo-cd",
                 "operation": "send_custom_request",
                 "operationTitle": "Execute an API Call",
@@ -437,7 +437,7 @@
                   "destination": "{\n  \"server\": \"\",\n  \"namespace\": \"\"\n}",
                   "additional_properties": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "argo-cd",
                 "operation": "update_application",
                 "operationTitle": "Update Application",
@@ -505,7 +505,7 @@
                   "name": "",
                   "server": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "argo-cd",
                 "operation": "get_clusters",
                 "operationTitle": "Get Clusters",
@@ -590,7 +590,7 @@
                 "params": {
                   "name": ""
                 },
-                "version": "1.0.0",
+                "version": "1.0.1",
                 "connector": "argo-cd",
                 "operation": "get_application_by_name",
                 "operationTitle": "Get Application by Name"
