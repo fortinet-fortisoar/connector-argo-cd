@@ -1,3 +1,3 @@
-#### Following enhancements have been made to the ArgoCD Connector in version 1.0.1:
+#### The following enhancements have been made to the Argo CD connector in version 1.0.1:
 
-- Added retry logic.
+- Added logic to retry every 5 seconds, with a 10-second delay between API REST calls.
